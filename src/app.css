@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body{ 
+    background-color: #303030;
+    font-family: Helvetica, sans-serif;
+
+    padding: 50px 20px;
+}

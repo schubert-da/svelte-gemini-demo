@@ -1,67 +1,10 @@
-<script lang="ts">
+<script>
 	import TestContainer from '$lib/components/TestContainer/TestContainer.svelte';
 
-	import { createCollapsible, melt } from '@melt-ui/svelte';
-	import { ChevronDown, X } from 'lucide-svelte';
-	import { slide } from 'svelte/transition';
-
-	const {
-		elements: { root, content, trigger },
-		states: { open }
-	} = createCollapsible({
-		forceVisible: true
-	});
+	import CodeGen_1 from '$lib/components/tests/CodeGeneration/codegen_1.svelte';
+	// import Codegen_2 from '$lib/components/tests/CodeGeneration/codegen_2.svelte';
 </script>
 
 <TestContainer>
-	<div use:melt={$root} class="relative mx-auto mb-28 w-[18rem] max-w-full sm:w-[25rem]">
-		<div class="flex items-center justify-between">
-			<span class="text-magnum-900 text-sm font-semibold">
-				@thomasglopes starred 3 repositories
-			</span>
-			<button
-				use:melt={$trigger}
-				class="text-magnum-800 relative h-6 w-6 place-items-center rounded-md bg-white
-          text-sm shadow hover:opacity-75 data-[disabled]:cursor-not-allowed
-          data-[disabled]:opacity-75"
-				aria-label="Toggle"
-			>
-				<div class="abs-center">
-					{#if $open}
-						<X class="size-4" />
-					{:else}
-						<ChevronDown class="size-4" />
-					{/if}
-				</div>
-			</button>
-		</div>
-
-		<div class="my-2 rounded-lg bg-white p-3 shadow">
-			<span class="text-base text-black">melt-ui/melt-ui</span>
-		</div>
-
-		<div style:position="absolute" style:top="calc(100% + 10px)" style:right="0" style:left="0">
-			{#if $open}
-				<div use:melt={$content} transition:slide>
-					<div class="flex flex-col gap-2">
-						<div class="rounded-lg bg-white p-3 shadow">
-							<span class="text-base text-black">sveltejs/svelte</span>
-						</div>
-						<div class="rounded-lg bg-white p-3 shadow">
-							<span class="text-base text-black">sveltejs/kit</span>
-						</div>
-					</div>
-				</div>
-			{/if}
-		</div>
-	</div>
+	<CodeGen_1 />
 </TestContainer>
-
-<style lang="postcss">
-	.abs-center {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-	}
-</style>

@@ -10,8 +10,12 @@
 	// BUG FIXING
 	import Bugfixing_1 from '$lib/components/tests/BugFixing/bugfixing_1.svelte';
 	import Bugfixing_2 from '$lib/components/tests/BugFixing/bugfixing_2.svelte';
+
+	// DOCUMENTATION
+	import Docs_1 from '$lib/components/tests/Documentation/docs_1.svelte';
+	import Docs_2 from '$lib/components/tests/Documentation/docs_2.svelte';
 </script>
 
-<TestContainer title="Debugging incorrect onValueChange() usage">
-	<Bugfixing_2 />
+<TestContainer title="Toast Example">
+	<Docs_2 />
 </TestContainer>
